@@ -8,13 +8,18 @@ version: v1
 protocols:
   - HTTPS
   - HTTP
+#
+types:
+
+
+
 
 
 /accounts:
   post:
     displayName: Create a new account
     body:
-      type: Customer
+      type: Account
     responses:
       201:
       400:
