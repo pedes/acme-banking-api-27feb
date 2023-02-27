@@ -61,7 +61,7 @@ protocols:
           example:
             type: Missing attribute
             title: Body structure incomplete
-            detail: Body is missing the account id.
+            detail: Body is missing the customer id.
       
   
   /{customer_id}:
@@ -92,6 +92,13 @@ protocols:
     displayName: Create a new transaction
     responses:
       201:
+      400:
+        headers:
+        body:
+          example:
+            type: Missing attribute
+            title: Body structure incomplete
+            detail: Body is missing the transaction id.
   /{transaction_id}:
     get:
       displayName: Get information for a specific transaction
