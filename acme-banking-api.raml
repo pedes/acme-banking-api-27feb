@@ -55,6 +55,14 @@ protocols:
     displayName: Create a new customer
     responses:
       201:
+      400:
+        headers:
+        body:
+          example:
+            type: Missing attribute
+            title: Body structure incomplete
+            detail: Body is missing the account id.
+      
   
   /{customer_id}:
     get:
