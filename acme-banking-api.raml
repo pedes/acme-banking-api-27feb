@@ -13,6 +13,8 @@ protocols:
 /accounts:
   post:
     displayName: Create a new account
+    responses:
+      201:
   
   /{account_id}:
     get:
@@ -37,6 +39,8 @@ protocols:
       200:
   post:
     displayName: Create a new customer
+    responses:
+      201:
   
   /{customer_id}:
     get:
@@ -59,6 +63,8 @@ protocols:
 /transactions:
   post:
     displayName: Create a new transaction
+    responses:
+      201:
   /{transaction_id}:
     get:
       displayName: Get information for a specific transaction
