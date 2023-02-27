@@ -12,8 +12,9 @@ protocols:
 # Register new datatypes
 types:
   Account: !include datatypes/Account.raml
-  Customer:
-  Transaction
+  Customer: !include datatypes/Customer.raml
+  Transaction: !include datatypes/Transaction.raml
+  CustomErrorMessage: !include datatypes/Transaction.raml
 
 /accounts:
   post:
