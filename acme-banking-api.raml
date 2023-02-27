@@ -34,13 +34,13 @@ protocols:
       displayName: Get information for a specific account
       responses:
         201:
-        400:
-        headers:
-        body:
-          example:
-            type: Missing attribute
-            title: Body structure incomplete
-            detail: Body is missing the account id.
+        503:
+          headers:
+          body:
+            example:
+              type: Missing attribute
+              title: Body structure incomplete
+              detail: Body is missing the account id.
     delete:
       displayName: Get information for a specific account
       responses:
