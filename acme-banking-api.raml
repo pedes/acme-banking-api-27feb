@@ -81,6 +81,13 @@ protocols:
       displayName: Update information for a specific customer
       responses:
         204:
+        503:
+          headers:
+          body:
+            example:
+              type: Service Unavailable
+              title: Service Unavailable
+              detail: The customer service is not available
     delete:
       displayName: Delete information for a specific customer
       responses:
