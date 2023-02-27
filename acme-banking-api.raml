@@ -13,8 +13,10 @@ protocols:
 /accounts:
   post:
     displayName: Create a new account
-
-/accounts/{account_id}:
+  
+  /{account_id}:
+    get:
+      displayName: Get information for a specific account
 
 /customers:
   get:
