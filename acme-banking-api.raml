@@ -25,7 +25,8 @@ resourceTypes:
 /accounts:
   type: Collection
   post:
-    
+    body:
+      example: !include examples/AccountExample.raml
   
   /{account_id}:
     get:
