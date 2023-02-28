@@ -13,7 +13,7 @@ protocols:
 types:
   Account: !include datatypes/Account.raml
   Customer: !include datatypes/Customer.raml
-  Transaccion: !include datatypes/Transaction.raml
+  Transaction: !include datatypes/Transaction.raml
   CustomErrorMessage: !include datatypes/CustomErrorMessage.raml
 
 /accounts:
@@ -65,7 +65,7 @@ types:
     responses:
       200:
         body:
-          type: Transaccion[]
+          type: Transaction[]
 
 /customers:
   get:
@@ -135,7 +135,7 @@ types:
   post:
     displayName: Create a new transaction
     body:
-      type: Transaccion
+      type: Transaction
     responses:
       201:
       400:
@@ -150,3 +150,5 @@ types:
       displayName: Get information for a specific transaction
       responses:
         200:
+          body:
+            type: Transaction
