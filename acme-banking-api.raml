@@ -64,6 +64,7 @@ resourceTypes:
           type: Transaction[]
 
 /customers:
+  type: Collection
   get:
     displayName: Get all customers in the bank
     # headers & body for request
@@ -78,22 +79,7 @@ resourceTypes:
             example: max-age=604800 # 1 week
         body:
           type: Customer[]
-  post:
-    displayName: Create a new customer
-    body:
-      # this datatype includes the example data
-      type: Customer
-      example: !include examples/CustomerExampleExternal.raml
-    responses:
-      201:
-      400:
-        headers:
-        body:
-          example:
-            type: Missing attribute
-            title: Body structure incomplete
-            detail: Body is missing the customer id.
-      
+  
   
   /{customer_id}:
     get:
