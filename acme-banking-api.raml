@@ -23,25 +23,7 @@ resourceTypes:
   Collection: !include resource-types/Collection.raml
 
 /accounts:
-  post:
-    displayName: Create a new account
-    body:
-      type: Account
-      example: !include examples/AccountExample.raml
-    responses:
-      201:
-        headers:
-          Location:
-            example: /accounts/acc-123
-        body:
-          example: OK
-      400:
-        headers:
-        body:
-          example:
-            type: Missing attribute
-            title: Body structure incomplete
-            detail: Body is missing the account id.
+  
   /{account_id}:
     get:
       displayName: Get information for a specific account
