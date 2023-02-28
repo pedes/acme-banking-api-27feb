@@ -9,9 +9,8 @@ resourceTypes:
     post?:    
       description: Create a new <<resourcePathName | !singularize>>
       displayName: Add <<resourcePathName | !singularize>>
-      body:
-        application/json:      
-          type: <<resourcePathName | !singularize | !uppercamelcase>>
+      body:    
+        type: <<resourcePathName | !singularize | !uppercamelcase>>
       responses:
         201:
           headers:
@@ -20,9 +19,8 @@ resourceTypes:
               example: /<<resourcePathName>>/8f19cb50-3f57-4d38              
           body:        
         503:
-          body:
-            application/json:  
-              type: !include ../datatypes/CustomErrorMessage.raml
+          body: 
+            type: !include ../datatypes/CustomErrorMessage.raml
 
   Member:
     get?:     
@@ -31,12 +29,10 @@ resourceTypes:
       responses:
         200:
           body:
-            application/json:
-              type: <<resourcePathName | !singularize | !uppercamelcase>>
+            type: <<resourcePathName | !singularize | !uppercamelcase>>
         404:
           body:
-            application/json:
-              type: !include ../datatypes/CustomErrorMessage.raml       
+            type: !include ../datatypes/CustomErrorMessage.raml       
     patch?:
       description: Update a specific <<resourcePathName | !singularize >>
       displayName: Update a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
@@ -45,8 +41,7 @@ resourceTypes:
         204:    
         501:
           body:
-            application/json:
-              type: !include ../datatypes/CustomErrorMessage.raml  
+            type: !include ../datatypes/CustomErrorMessage.raml  
     delete?: 
       description: Delete a specific <<resourcePathName | !singularize >>
       displayName: Delete a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
@@ -55,8 +50,7 @@ resourceTypes:
           body:
         404:
           body:
-            application/json:
-              type: !include ../datatypes/CustomErrorMessage.raml   
+            type: !include ../datatypes/CustomErrorMessage.raml   
     put?:
       body:
         type: Account
@@ -69,5 +63,4 @@ resourceTypes:
           body:         
         501:
           body:
-            application/json:
-              type: !include ../datatypes/CustomErrorMessage.raml    
+            type: !include ../datatypes/CustomErrorMessage.raml    
