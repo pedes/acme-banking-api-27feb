@@ -29,7 +29,7 @@ uses:
   Banking: libraries/BankingLibrary.raml
 
 securitySchemes:
-  
+  JWT: !include security-schemes/JWTToken.raml
 
 /accounts:
   type: Banking.Collection
