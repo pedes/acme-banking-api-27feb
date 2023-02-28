@@ -3,7 +3,7 @@
 post:
   displayName: Create a new <<resourcePathName>>
   body:
-    type: <<resourcePathName>>
+    type: <<resourcePathName | !singularize >>
   responses:
     201:
       headers:
