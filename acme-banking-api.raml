@@ -65,6 +65,7 @@ resourceTypes:
 
 /customers:
   type: Collection
+
   get:
     displayName: Get all customers in the bank
     # headers & body for request
@@ -116,19 +117,7 @@ resourceTypes:
     
 
 /transactions:
-  post:
-    displayName: Create a new transaction
-    body:
-      type: Transaction
-    responses:
-      201:
-      400:
-        headers:
-        body:
-          example:
-            type: Missing attribute
-            title: Body structure incomplete
-            detail: Body is missing the transaction id.
+
   /{transaction_id}:
     get:
       displayName: Get information for a specific transaction
