@@ -39,7 +39,7 @@ uses:
     get:
       displayName: Get information for a specific account
       is:
-        - Cacheable
+        - Banking.Cacheable
       responses:
         200:
           body:
@@ -73,7 +73,7 @@ uses:
           type: Transaction[]
 
 /customers:
-  type: Collection
+  type: Banking.Collection
 
   get:
     displayName: Get all customers in the bank
@@ -126,7 +126,7 @@ uses:
     
 
 /transactions:
-  type: Collection
+  type: Banking.Collection
   
   /{transaction_id}:
     get:
