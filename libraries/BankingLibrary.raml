@@ -25,50 +25,49 @@ resourceTypes:
               type: !include ../datatypes/CustomErrorMessage.raml
 
   Member:
-
-get?:     
-  description: Retrieve a <<resourcePathName | !singularize>> with a specific <<resourcePathName | !singularize >>
-  displayName: Get a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
-  responses:
-    200:
+    get?:     
+      description: Retrieve a <<resourcePathName | !singularize>> with a specific <<resourcePathName | !singularize >>
+      displayName: Get a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<resourcePathName | !singularize | !uppercamelcase>>
+        404:
+          body:
+            application/json:
+              type: !include ../datatypes/CustomErrorMessage.raml       
+    patch?:
+      description: Update a specific <<resourcePathName | !singularize >>
+      displayName: Update a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
       body:
-        application/json:
-          type: <<resourcePathName | !singularize | !uppercamelcase>>
-    404:
+      responses:
+        204:    
+        501:
+          body:
+            application/json:
+              type: !include ../datatypes/CustomErrorMessage.raml  
+    delete?: 
+      description: Delete a specific <<resourcePathName | !singularize >>
+      displayName: Delete a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
+      responses:
+        200:
+          body:
+        404:
+          body:
+            application/json:
+              type: !include ../datatypes/CustomErrorMessage.raml   
+    put?:
       body:
-        application/json:
-          type: !include ../datatypes/CustomErrorMessage.raml       
-patch?:
-  description: Update a specific <<resourcePathName | !singularize >>
-  displayName: Update a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
-  body:
-  responses:
-    204:    
-    501:
-      body:
-        application/json:
-          type: !include ../datatypes/CustomErrorMessage.raml  
-delete?: 
-  description: Delete a specific <<resourcePathName | !singularize >>
-  displayName: Delete a <<resourcePathName | !singularize>> by <<resourcePathName | !singularize>> ID
-  responses:
-    200:
-      body:
-    404:
-      body:
-        application/json:
-          type: !include ../datatypes/CustomErrorMessage.raml   
-put?:
-  body:
-    type: Account
-  responses:
-    200:
-      body:
-    201:
-      headers:
-        Location: 
-      body:         
-    501:
-      body:
-        application/json:
-          type: !include ../datatypes/CustomErrorMessage.raml    
+        type: Account
+      responses:
+        200:
+          body:
+        201:
+          headers:
+            Location: 
+          body:         
+        501:
+          body:
+            application/json:
+              type: !include ../datatypes/CustomErrorMessage.raml    
